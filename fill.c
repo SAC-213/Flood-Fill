@@ -11,7 +11,7 @@ int main(int argc, char const *argv[])
     int NuevoR;
     int NuevoG;
     int NuevoB;
-//:
+
     clock_t t_inicio, t_final;
     double t_intervalo;
 
@@ -38,7 +38,7 @@ int main(int argc, char const *argv[])
 
     unsigned char B,G,R;
     fseek(stdin, InicioImagen, SEEK_SET);
-    for (int y = AlturaPixelxColumna - 1; y >= 0; y--) { // BMP de abajo hacia arriba
+    for (int y = AlturaPixelxColumna - 1; y >= 0; y--) {
         for (int x = 0; x < PixelxFila; x++) {
             fread(&B, 1, 1, stdin);
             fread(&G, 1, 1, stdin);
