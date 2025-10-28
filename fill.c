@@ -29,7 +29,6 @@ int main(int argc, char const *argv[])
 
     int PaddingxFila = (4 - ((PixelxFila * 3) % 4)) % 4;
 
-    // Declaración de Mapa como fila x columna
     int **Mapa = malloc(sizeof(int*) * AlturaPixelxColumna);
     for (int y = 0; y < AlturaPixelxColumna; y++)
     {
@@ -38,8 +37,12 @@ int main(int argc, char const *argv[])
 
     unsigned char B,G,R;
     fseek(stdin, InicioImagen, SEEK_SET);
-    for (int y = AlturaPixelxColumna - 1; y >= 0; y--) {
-        for (int x = 0; x < PixelxFila; x++) {
+    for (int y = AlturaPixelxColumna - 1; y >= 0; y--)
+    {
+        for (int x = 0; x < PixelxFila; x++)
+        
+        
+        {
             fread(&B, 1, 1, stdin);
             fread(&G, 1, 1, stdin);
             fread(&R, 1, 1, stdin);
@@ -60,8 +63,10 @@ int main(int argc, char const *argv[])
     unsigned char temp;
 
     fwrite(BytesBmp, 1, 54, stdout);
-    for (int y = AlturaPixelxColumna - 1; y >= 0; y--) {
-        for (int x = 0; x < PixelxFila; x++) {
+    for (int y = AlturaPixelxColumna - 1; y >= 0; y--)
+    {
+        for (int x = 0; x < PixelxFila; x++)
+        {
             temp = Mapa[y][x] & 0xFF;
             fwrite(&temp, 1, 1, stdout);
             temp = (Mapa[y][x] >> 8) & 0xFF;
@@ -69,7 +74,8 @@ int main(int argc, char const *argv[])
             temp = (Mapa[y][x] >> 16) & 0xFF;
             fwrite(&temp, 1, 1, stdout);
         }
-        for (int p = 0; p < PaddingxFila; p++) {
+        for (int p = 0; p < PaddingxFila; p++)
+        {
             temp = 0;
             fwrite(&temp, 1, 1, stdout);
         }
