@@ -5,7 +5,7 @@ The .exe has to be executed as bellow:
 
 Program.exe (X,Y) (R,G,B) <[archive.bmp] >[archive2.bmp]
 
-#Example:
+# __Example:__
 
 ![Example1](exampleBMP/example1.bmp)
 
