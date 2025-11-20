@@ -1,3 +1,50 @@
+/*
+Programa: Relleno por difusión recursivo (Flood Fill) usando BMP
+Versión: 1.0 — Noviembre 2025
+Autor(es): Ascencion Cruz Saul
+
+Descripción:
+Este programa recibe como entrada una imagen BMP a través de stdin,
+junto con coordenadas de inicio (X,Y) y un nuevo color RGB. Realiza
+un relleno tipo “bucket fill” sobre la imagen, cambiando todos los
+pixeles conectados del mismo color al nuevo color especificado.
+Finalmente imprime la imagen modificada por stdout.
+
+Cómo funciona:
+
+1. Lee la cabecera BMP para obtener dimensiones, padding y la posición
+   de inicio de pixeles.
+2. Carga todos los pixeles en una matriz dinámica de enteros.
+3. Invierte el eje Y para convertir coordenadas de formato BMP
+   a coordenadas tradicionales.
+4. Ejecuta un algoritmo recursivo de Flood Fill.
+5. Mide el tiempo de ejecución del relleno y el número de pixeles cambiados.
+6. Imprime la imagen modificada nuevamente en formato BMP.
+
+Compilación:
+gcc floodfill.c -o floodfill.exe
+
+Ejecución sugerida:
+floodfill.exe "(X,Y)" "(R,G,B)" < entrada.bmp > salida.bmp
+
+Argumentos:
+
+* (X,Y): Coordenadas de inicio del relleno dentro de la imagen.
+* (R,G,B): Nuevo color expresado en valores RGB.
+
+Requisitos:
+
+* Imagen BMP de 24 bits (BGR) proporcionada por stdin.
+
+Errores posibles:
+
+* Coordenadas fuera de la imagen.
+* Imagen no BMP de 24 bits.
+* Entrada insuficiente o malformada.
+* Desbordamiento de la recursión.
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
